@@ -1,0 +1,43 @@
+port: 7880
+bind_addresses:
+  - ""
+
+# API key/secret pairs - PRODUCTION KEYS
+keys:
+  APIkey_7k9mP2xQ8vN3wR5t: LKsec_9B4fH8jL2nM6pS1qW7eR3tY5uI0oA8
+  APIkey_3nV8bC4xF7mK9pL2: LKsec_6J9dN2vB5hG8kM3nQ7rT4wY1eP0sX
+
+# Logging
+log_level: info
+
+# WebRTC configuration
+webrtc:
+  # Use UDP for better performance
+  udp_port: 7882
+  tcp_port: 7881
+  
+  # ICE servers for NAT traversal
+  ice_servers:
+    - urls:
+        - stun:stun.l.google.com:19302
+
+# Room configuration
+room:
+  # Auto create rooms when users join
+  auto_create: true
+  # Timeout for empty rooms (in seconds)
+  empty_timeout: 300
+  # Maximum number of participants per room
+  max_participants: 0
+
+# Audio configuration
+audio:
+  # Audio levels for voice activity detection
+  active_level: -50
+  min_percentile: 40
+
+# Enable development mode features (disable in production)
+development: false
+
+# Health check endpoint
+http_relay_port: 7880

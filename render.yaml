@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: livekit-server
+    runtime: go
+    buildCommand: go build -o livekit ./cmd/server
+    startCommand: ./livekit --config config.yaml
+    envVars:
+      - key: LIVEKIT_KEYS
+        value: "devkey: secret"  # Change for production!
+      - key: PORT
+        value: "7880"
+    healthCheckPath: /
+    plan: starter # or standard/pro based on your needs
+    
+  # Optional: Add Redis for production scaling
+  - type: redis
+    name: livekit-redis
+    plan: starter
+    ipAllowList: []
