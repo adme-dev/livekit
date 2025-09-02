@@ -2,9 +2,9 @@
   "mcpServers": {
     "livekit-render": {
       "command": "node",
-      "args": ["/path/to/your/livekit/mcp-server/dist/index.js"],
+      "args": ["/Users/paulgiurin/Documents/GitHub/livekit/mcp-server/dist/index.js"],
       "env": {
-        "RENDER_API_KEY": "your-render-api-key-here"
+        "RENDER_API_KEY": "rnd_yAz6XPYCDOa1v32cVQojstVv1M6v"
       }
     }
   }
